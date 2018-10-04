@@ -14,6 +14,7 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
+      volume: 0.5,
       isPlaying: false,
       hoveredSong: null
       
@@ -36,6 +37,13 @@ class Album extends Component {
   setSong(song) {
     this.audioElement.src = song.audioSrc;
     this.setState({currentSong: song});
+  }
+
+  formatTime(time) {
+    if (time > 0) {
+      const timeFormatted = new Date(time * 1000).toISOString().substr(15, 4);
+      return timeFormatted;
+    } else return "-:--";
   }
 
   handleSongClick(song) {
@@ -81,6 +89,12 @@ class Album extends Component {
     this.setState({ currentTime: newTime});
   }
 
+  handleVolumeChange(e) {
+    const newVolume = e.target.value;
+    this.audioElement.volume = newVolume;
+    this.setState({ volume: newVolume});
+  }
+
   componentDidMount() {
     this.eventListeners = {
       timeupdate: e => {
@@ -88,16 +102,21 @@ class Album extends Component {
       },
       durationchange: e => {
         this.setState({ duration: this.audioElement.duration});
-      }
+      },
+      volumechange: e => {
+        this.setState({ volume: this.audioElement.volume});
+      },
     };
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
+    this.audioElement.addEventListener('volumechange', this.eventListeners.volumechange);
   }
 
   componentWillUnmount() {
     this.audioElement.src = null;
     this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
+    this.audioElement.removeEventListener('volumechange', this.eventListeners.volumechange);
   }
 
   render() {
@@ -145,7 +164,7 @@ class Album extends Component {
                   <td><span className="icon ion-md-pause" /></td>
                 }
                 <td>{song.title}</td>
-                <td>{new Date(song.duration * 1000).toISOString().substr(14, 5)}</td>
+                <td>{this.formatTime(song.duration)}</td>
               </tr>
 
             
@@ -161,6 +180,8 @@ class Album extends Component {
           handlePrevClick={ () => this.handlePrevClick() }
           handleNextClick={ () => this.handleNextClick() }
           handleTimeChange={ (e) => this.handleTimeChange(e)}
+          handleVolumeChange={ (e) => this.handleVolumeChange(e)}
+          formatTime={ (time) => this.formatTime(time) }
         />
       </section>
     )
