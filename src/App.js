@@ -11,10 +11,22 @@ class App extends Component {
       <div className="App">
         <header>
           <nav>
-            <Link to='/'>Landing</Link>
-            <Link to='/library'>Library</Link>
+            <div id="nav-column-1">
+              <Link to='/' >
+                <button className="nav-buttons">
+                  <span className="icon ion-md-home" />
+                </button>
+              </Link>
+            </div>
+            <div id="nav-column-logo">
+              <img id="logo" src='./../assets/images/bloc_jams_logo.png' alt="Bloc Jams logo"/>
+            </div>
+            <div id="nav-column-2">
+              <Link className="nav-buttons-link" to='/library' >
+                <button className="nav-buttons">Library</button>
+              </Link>
+            </div>
           </nav>
-          <h1>Bloc Jams</h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />

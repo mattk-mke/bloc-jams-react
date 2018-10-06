@@ -125,9 +125,9 @@ class Album extends Component {
         <section id="album-info">
           <img id="album-cover-art" src={this.state.album.albumCover} alt="album cover" />
           <div className="album-details">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="Artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
+            <h1 className="album-title">{this.state.album.title}</h1>
+            <h2 className="album-artist">{this.state.album.artist}</h2>
+            <div className="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
         <table id="song-list">
@@ -137,7 +137,7 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <thead>
-            <tr>
+            <tr id="song-list-headers">
               <th>#</th>
               <th>Title</th>
               <th>Duration</th>
@@ -149,31 +149,32 @@ class Album extends Component {
             
               <tr className="song" key={index} onClick={ () => this.handleSongClick(song)} onMouseEnter={ () => this.handleMouseOver(song) } onMouseLeave={this.handleMouseOff.bind(this)}>
                 {(song !== this.state.currentSong && song !== this.state.hoveredSong) &&
-                  <td>{index + 1}</td>
+                  <td className="songnumber">{index + 1}</td>
                 }
                 {(song === this.state.currentSong && song !== this.state.hoveredSong && !this.state.isPlaying ) &&
-                  <td><span className="icon ion-md-play" /></td>
+                  <td className="songnumber"><span className="icon ion-md-play" /></td>
                 }
                 {(song === this.state.hoveredSong && song !== this.state.currentSong) &&
-                  <td><span className="icon ion-md-play" /></td>
+                  <td className="songnumber"><span className="icon ion-md-play" /></td>
                 }
                 {(song === this.state.currentSong && song === this.state.hoveredSong && !this.state.isPlaying) &&
-                  <td><span className="icon ion-md-play" /></td>
+                  <td className="songnumber"><span className="icon ion-md-play" /></td>
                 }
                 {(song === this.state.currentSong && this.state.isPlaying) && 
-                  <td><span className="icon ion-md-pause" /></td>
+                  <td className="songnumber"><span className="icon ion-md-pause" /></td>
                 }
-                <td>{song.title}</td>
-                <td>{this.formatTime(song.duration)}</td>
+                <td className="song-title">{song.title}</td>
+                <td className="song-duration">{this.formatTime(song.duration)}</td>
               </tr>
 
             
             )}
           </tbody>
         </table>
-        <PlayerBar
+        <PlayerBar className="player-bar"
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
+          album={this.state.album}
           currentTime={this.audioElement.currentTime}
           duration={this.audioElement.duration}
           handleSongClick={ () => this.handleSongClick(this.state.currentSong)}

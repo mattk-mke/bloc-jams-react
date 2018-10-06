@@ -1,10 +1,11 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* .App {
+  text-align: center;
+} */
+* {
+  box-sizing: border-box;
 }
 
 .App-header {
@@ -22,7 +23,494 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* --------- Landing ---------*/
+
+
+
+nav {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  background: #472A56;
+  box-shadow: inset 0 -3px 20px 0 rgba(0,0,0,0.15);
+  display: table;
+}
+
+#nav-column-1 {
+  text-align: left;
+  float: left;
+  width: 40%;
+  margin-top: 15px;
+}
+
+#nav-column-logo {
+  text-align: center;
+  float: left;
+  width: 20%;
+  /* margin-top: 15px; */
+}
+
+#nav-column-2 {
+  text-align: right;
+  float: left;
+  width: 40%;
+  margin-top: 15px;
+}
+
+#logo {
+  width: 100px;
+  height: 75px;
+  text-align: center;
+}
+
+.nav-buttons {
+  background: #472A56;
+  border: 1px solid #E32C69;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  padding: 10px 30px;
+  margin: auto 60px auto 60px;
+}
+
+
+#splash {
+  /* height: 200%; */
+  width: 100%;
+  /* height: 45%; */
+  margin-top: 80px;
+  padding: 5px;
+  background-image: url(/assets/images/blurred_backgrounds/blur_bg_splash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#splash:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.splash-column {
+  float: left;
+  width: 50%;
+  /* padding: 100px 0px 0px 0px; */
+  height: 300px;
+  /* margin: auto; */
+  /* height: 45%; */
+
+  /* margin-top: 50%; */
+}
+
+h1.bloc-jams {
+  text-align: left;
+  font-family: 'Righteous', cursive;
+  font-size: 100px;
+  color: #FFFFFF;
+  text-shadow: 0 3px 8px #472A56;
+  margin: 10px 0px 0px 15%;
+}
+
+h2.bloc-jams {
+  text-align: left;
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
+  color: #FFFFFF;
+  text-shadow: 0 3px 8px #472A56;
+  margin-left: 15%;
+}
+
+.call-to-action {
+  padding: 10px 30px;
+  background: #E32C69;
+  box-shadow: inset 3px -9px 3px 0 rgba(0,0,0,0.12);
+  border: 1px solid #E32C69;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  margin: 15% 10% 0 30%;
+}
+
+.selling-points:after {
+  display: table;
+  clear: both;
+}
+
+
+.point {
+  float: left;
+  width: 33.33333333%;
+  /* height: auto; */
+  padding: 0px 15px 0px 15px;
+}
+
+.point-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #472A56;
+  padding: 0px 10px 0px 10px;
+}
+.point-description {
+  text-align: center;
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  color: #4A4A4A;
+  padding: 30px 50px 0px 50px;
+}
+
+@media screen and (max-width: 1150px) {
+
+  
+  .splash-column {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+  }
+  .point {
+    width: 100%
+  }
+
+  h1.bloc-jams {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  h2.bloc-jams {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .call-to-action {
+    text-align: center;
+    font-size: 36px;
+    margin: 10% 0 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  nav {
+    height: 60px;
+  }
+
+  .nav-buttons {
+    margin: 0 10px 0 10px;
+    font-size: 18px;
+    padding: 5px 20px;
+  }
+
+  #logo {
+    width: 66px;
+    height: 50px;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  #splash {
+    margin-top: 60px;
+  }
+  .splash-column {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    margin: 10% 0 0 0;
+  }
+  .point {
+    width: 100%
+  }
+
+  h1.bloc-jams {
+    text-align: center;
+    font-size: 50px;
+    margin-left: 0;
+  }
+
+  h2.bloc-jams {
+    text-align: center;
+    font-size: 30px;
+    margin-left: 0;
+  }
+
+  .call-to-action {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+
+
+}
+
+/* --------- Library ---------*/
+
+.library:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.album-column {
+  float: left;
+  width: 50%;
+  height: 300px;
+  margin-top: 80px;
+}
+
+.album-art {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.album-info {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  float: left;
+  width: 50%;
+  /* margin-left: 25%; */
+  padding: 0 0 0 20px;
+}
+
+.album-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: #472A56;
+  text-align: left;
+  font-weight: bold;
+}
+
+.album-artist {
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  color: #472A56;
+  text-align: left;
+}
+
+.album-length {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #4A4A4A;
+  text-align: left;
+}
+
+@media screen and (max-width: 1150px) {
+
+  .album-column {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .album-column {
+    width: 100%;
+    margin-bottom: 75px;
+    text-align: center;
+  }
+
+  .album-art {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .album-info {
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding: 0;
+  }
+  
+  .album-title {
+    text-align: center;
+  }
+
+  .album-artist {
+    text-align: center;
+  }
+
+  .album-length {
+    text-align: center;
+  }
+}
+
+/* --------- Album ---------*/
+
+.album {
+  margin-top: 80px;
+  background-image: url(/assets/images/blurred_backgrounds/blur_bg_splash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.album-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#album-cover-art {
+  height: relative;
+  width: 30%;
+  float: left;
+  /* padding: 20px; */
+  margin: 40px;
+  box-shadow: -2px 4px 12px 2px rgba(71,42,86,0.20);
+}
+.album-details {
+  float: left;
+  width: 50%;
+  /* position: relative;
+  top: 100px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  margin-top: 5%;
+  text-align: center;
+  margin-left: 20px;
+  height: 50%;
+}
+
+h1.album-title {
+  line-height: 1;
+  margin-bottom: 0px;
+}
+
+.release-info {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #4A4A4A;
+  text-align: left;
+}
+
+#song-list {
+  float: left;
+  width: 25%;
+  height: 50%;
+  margin-left: 20px;
+  margin-top: 40px;
+  border: 2px solid #472A56;
+  border-radius: 4px;
+  border-spacing: 0;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 2px 2px 12px 2px rgba(71,42,86,0.20);
+}
+
+#song-number-column {
+  text-align: center;
+  width: 25px;
+}
+
+#song-duration-column {
+  width: 75px;
+}
+
+#song-title-column {
+  width: 200px;
+}
+
+.songnumber {
+  text-align: center;
+  border-bottom: 1px solid #472A56;
+}
+
+.song-title {
+  padding-left: 10px;
+  border-bottom: 1px solid #472A56;
+}
+
+.song-duration {
+  text-align: center;
+  border-bottom: 1px solid #472A56;
+}
+
+#song-list-headers {
+  background-color: #E32C69;
+  color: #F1F1F1;
+}
+.player-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #472A56;
+  box-shadow: inset 0 -3px 20px 0 rgba(0,0,0,0.15);
+  height: 100px;
+}
+
+
+
+/* --------- Player Bar ---------*/
+
+.seek-container {
+  position: fixed;
+  bottom: 95px;
+  width: 100%;
+}
+
+.seek-bar {
+  -webkit-appearance: none;  
+  appearance: none;
+  width: 100%;
+  height: 5px; 
+  background: #D0BCD5; 
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
+  transition: opacity .2s;
+}
+
+.seek-bar:hover {
+  opacity: 1;
+}
+.seek-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 15px;
+  border-radius: 5px;
+  background: #E32C69; 
+  cursor: pointer;
+}
+
+.now-playing {
+  color: #FFFFFF;
+}
+.np-left {
+  float: left;
+  width: 10%
+}
+
+
+.np-right {
+  float: left;
+  width: 10%
+}
+
+#previous, #play-pause, #next {
+  float: left;
+  width: 5%;
+  background: #472A56;
+  border: 1px solid #E32C69;
+  border-radius: 40px;
+  padding: 10px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+}
+
+#volume-control {
+  float: left;
+  width: 20%;
+  color: #FFFFFF;
 }
