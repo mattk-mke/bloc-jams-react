@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Landing = () => (
-  <section className="landing">
+  <section className="landing animated fadeIn">
     <section id="splash">
       <div className="splash-column">
         <h1 className="bloc-jams">Bloc Jams</h1>

@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 class PlayerBar extends Component {
   render() {
     return (
-      <section className="player-bar">
-        <div class="now-playing">
+      <section className="player-bar animated slideInUp">
+        <div className="now-playing">
           <div className="np-left">
             <div className="np">Now Playing:</div>
-            <div className="current-time">{this.props.formatTime(this.props.currentTime)} / {this.props.formatTime(this.props.duration)}</div>
+            <div className="np-time">{this.props.formatTime(this.props.currentTime)} / {this.props.formatTime(this.props.duration)}</div>
           </div>
           <div className="np-right">
             <div className="np-song">{this.props.currentSong.title}</div>
