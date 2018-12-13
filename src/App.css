@@ -63,7 +63,7 @@ nav {
 }
 
 .nav-buttons {
-  background: #472A56;
+  background-color: #472A56;
   border: 1px solid #E32C69;
   border-radius: 8px;
   text-decoration: none;
@@ -72,8 +72,13 @@ nav {
   font-size: 26px;
   padding: 10px 30px;
   margin: auto 60px auto 60px;
+  -webkit-transition: .2s; 
+  transition: background-color .2s;
 }
 
+.nav-buttons:hover {
+  background-color: #E32C69;
+}
 
 #splash {
   width: 100%;
@@ -117,7 +122,7 @@ h2.bloc-jams {
 
 .call-to-action {
   padding: 10px 30px;
-  background: #E32C69;
+  background-color: #E32C69;
   box-shadow: inset 3px -9px 3px 0 rgba(0,0,0,0.12);
   border: 1px solid #E32C69;
   border-radius: 8px;
@@ -127,6 +132,12 @@ h2.bloc-jams {
   font-family: 'Roboto', sans-serif;
   font-size: 50px;
   margin: 20% 10% 0 30%;
+  -webkit-transition: .2s; 
+  transition: box-shadow .2s;
+}
+
+.call-to-action:hover {
+  box-shadow: inset 3px -9px 3px 0 rgba(0,0,0,0.22);
 }
 
 .selling-points:after {
@@ -266,6 +277,15 @@ h2.bloc-jams {
   float: left;
   width: 50%;
   padding: 0 0 0 20px;
+}
+
+.album-info div {
+  -webkit-transition: .2s; 
+  transition: color .2s;
+}
+
+.album-info div:hover {
+  color: #E32C69;
 }
 
 .album-title {
@@ -598,10 +618,10 @@ td {
   padding-right: 33.33333%;
   margin-top: 20px;
 }
-#previous, #play-pause, #next {
+.control-buttons button {
   float: left;
   width: 33.333333%;
-  background: #472A56;
+  background-color: #472A56;
   border: 1px solid #E32C69;
   border-radius: 40px;
   padding: 10px;
@@ -609,6 +629,12 @@ td {
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 26px;
+  -webkit-transition: .2s; 
+  transition: background-color .2s;
+}
+
+.control-buttons button:hover {
+  background-color: #E32C69;
 }
 
 #volume-control {
